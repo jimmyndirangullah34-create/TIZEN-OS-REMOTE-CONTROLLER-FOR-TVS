@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Samsung TV Remote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Samsung TV Remote</h1>
+
+    <input
+      type="text"
+      id="tvIp"
+      placeholder="TV IP Address (e.g. 192.168.1.105)"
+    />
+
+    <button onclick="connect()">Connect</button>
+
+    <div class="status" id="status">Not connected</div>
+
+    <div class="remote">
+      <button onclick="sendKey('KEY_VOLUP')">Vol +</button>
+      <button onclick="sendKey('KEY_VOLDOWN')">Vol -</button>
+      <button onclick="sendKey('KEY_MUTE')">Mute</button>
+
+      <div class="nav">
+        <button onclick="sendKey('KEY_UP')">▲</button>
+        <div>
+          <button onclick="sendKey('KEY_LEFT')">◄</button>
+          <button onclick="sendKey('KEY_ENTER')">OK</button>
+          <button onclick="sendKey('KEY_RIGHT')">►</button>
+        </div>
+        <button onclick="sendKey('KEY_DOWN')">▼</button>
+      </div>
+
+      <button onclick="sendKey('KEY_BACK')">Back</button>
+      <button onclick="sendKey('KEY_HOME')">Home</button>
+    </div>
+
+    <input
+      type="text"
+      id="textInput"
+      placeholder="Type text to send to TV"
+    />
+    <button onclick="sendText()">Send Text</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
